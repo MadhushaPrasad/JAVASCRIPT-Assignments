@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .wrapper {
+        height: 100px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .wrapper img {
+        height: 120px;
+    }
+
+    #img-dbl {
+        transform: rotateY(180deg);
+    }
+
+    #img-man {
+        transform: rotateY(180deg);
+    }
+
+    h1 {
+        right: 0;
+        left: 0;
+        top: 150px;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+        position: absolute;
+    }
+
+    hr {
+        position: absolute;
+        width: 100%;
+        border-left: 0;
+        border-right: 0
+    }
+</style>
+
+<body>
+    <hr style="top: 200px">
+    <div class="wrapper">
+        <img id="img-dbl" src="asset/gif-sample-seeyad.gif">
+        <img id="img-man" src="asset/1_VnJ1MGwCkkQ5umi895C6Fg.gif">
+
+    </div>
+    <hr style="bottom: 180px;">
+
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+
+        window.alert("message");
+        const imgDbl = $('#img-dbl');
+        const imgMan = $('#img-man');
+        const wrapper = $('.wrapper');
+        const windowWidth = $(window).width() - 500;
+        let position = 0;
+
+        let timer = setInterval(function () {
+            moveLeft();
+        }, 10);
+
+        function moveLeft() {
+            position++;
+            if (position < windowWidth) {
+                wrapper.css('left', position + 'px');
+            } else {
+                imgMan.css('transform', 'none');
+                imgDbl.css('transform', 'none');
+
+                imgMan.attr('src', 'asset/gif-sample-seeyad.gif');
+                imgDbl.attr('src', 'asset/1_VnJ1MGwCkkQ5umi895C6Fg.gif');
+                moveRight();
+
+            }
+        }
+
+        function moveRight() {
+            if (position-- >= 0) {
+                $('#img-dbl').css('right', position + 'px');
+                $('#img-man').css('right', (position + 150) + 'px');
+                setTimeout(moveRight, 0.1);
+            } else {
+                imgMan.css('transform', 'rotateY(180deg)');
+                imgDbl.css('transform', 'rotateY(180deg)');
+
+                imgMan.attr('src', 'asset/1_VnJ1MGwCkkQ5umi895C6Fg.gif');
+                imgDbl.attr('src', 'asset/gif-sample-seeyad.gif');
+                moveLeft();
+            }
+        }
+    </script>
+</body>
+
+</html>

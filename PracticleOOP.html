@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        var id;
+        var name;
+        var address;
+        var salary;
+        function Man(id, name, address, salary) {
+            this.id="C001";
+            this.name="Madhusha";
+            this.address="Kalutara";
+            this.salary=155555;
+            function getManDetails() {
+
+            }
+        }
+        function Sadun() {
+
+        }
+
+        Man.prototype=Sadun.__proto__;
+
+        var s=new Sadun();
+    </script>
+</body>
+
+</html>

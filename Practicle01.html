@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        section {
+            position: absolute;
+            border: 1px solid black;
+            width: 690px;
+            height: 450px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .div {
+            position: absolute;
+            width: 115px;
+            height: 450px;
+            background-color: blue;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .div01 {
+            position: absolute;
+            width: 115px;
+            height: 450px;
+            background-color: yellow;
+            top: 0;
+            bottom: 0;
+            left: 115px;
+            right: 0;
+        }
+
+        .div02 {
+            position: absolute;
+            width: 115px;
+            height: 450px;
+            background-color: red;
+            top: 0;
+            bottom: 0;
+            left: 230px;
+            right: 0;
+        }
+
+        .div03 {
+            position: absolute;
+            width: 115px;
+            height: 450px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 345px;
+            right: 0;
+        }
+
+        .div04 {
+            position: absolute;
+            width: 115px;
+            height: 450px;
+            background-color: orange;
+            top: 0;
+            bottom: 0;
+            left: 460px;
+            right: 0;
+        }
+
+        .div05 {
+            position: absolute;
+            width: 115px;
+            height: 450px;
+            /* background-color: green; */
+            top: 0;
+            bottom: 0;
+            left: 575px;
+            right: 0;
+        }
+
+        #div {
+            position: absolute;
+            width: 115px;
+            height: 90px;
+            background-color: blue;
+        }
+
+        #div2 {
+            position: absolute;
+            width: 115px;
+            height: 90px;
+            background-color: yellow;
+            top: 90px;
+        }
+
+        #div3 {
+            position: absolute;
+            width: 115px;
+            height: 90px;
+            /* background-color: red; */
+            top: 180px;
+        }
+
+        #div4 {
+            position: absolute;
+            width: 115px;
+            height: 90px;
+            background-color: white;
+            top: 270px;
+        }
+
+        #div5 {
+            position: absolute;
+            width: 115px;
+            height: 90px;
+            background-color: orange;
+            top: 360px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="position: absolute; left: 32%;margin: 10px;"><b><i>Buddist Flag Animation</i></b></h1>
+    <section>
+        <div class="div"></div>
+        <div class="div01"></div>
+        <div class="div02"></div>
+        <div class="div03"></div>
+        <div class="div04"></div>
+        <div class="div05">
+            <div id="div"></div>
+            <div id="div2"></div>
+            <div id="div3"></div>
+            <div id="div4"></div>
+            <div id="div5"></div>
+        </div>
+    </section>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            var con = true;
+            var col0 = ["#ff0000", "#ff3333", "#ff6666", "#ff9999","#ff0000"];//red color
+            var col01 = ["#0000ff", "#3333ff", "#6666ff", "#9999ff","#0000ff"];//blue color
+            var col02 = ["#ffff00", "#ffff33", "#ffff66", " #ffff99","#ffff00"];//yello color
+            var col03 = ["#ffffff", "#f2f2f2", "#ffffff", "#f2f2f2","#ffffff"];//white color
+            var col04 = ["#ff9900", "#ffad33", " #ffc266", " #ffd699","#ff9900"];//Orange Color
+            var i = 0;
+            setInterval(getChangeColor, 90);
+            function getChangeColor() {
+                    $('#div').css('background-color', col01[i]);
+                    $('#div2').css('background-color', col02[i]);
+                    $('#div3').css('background-color', col0[i]);
+                    $('#div4').css('background-color', col03[i]);
+                    $('#div5').css('background-color', col04[i]);
+
+                    $('.div').css('background-color', col01[i]);
+                    $('.div01').css('background-color', col02[i]);
+                    $('.div02').css('background-color', col0[i]);
+                    $('.div03').css('background-color', col03[i]);
+                    $('.div04').css('background-color', col04[i]);
+                    // con = false;
+                i++;
+                if (i == col0.length) i = 0;
+            }
+
+        });
+    </script>
+</body>
+
+</html>
